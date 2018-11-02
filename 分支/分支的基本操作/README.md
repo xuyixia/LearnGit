@@ -1,5 +1,4 @@
-本地初始化git仓库后，在第一次提交之前是不存在分支的。
-
+本地初始化git仓库后，在第一次提交之前是不存在分支的。主分支默认为master分支，也可改为其它。空文件夹无法加入到缓存区。
 
 ### 查看分支
 查看分支`git branch`,后面两步可以合为一步`git checkout -b <branch>`,单独创建分支`git branch <branch>`,切换分支`git checkout <branch>`
@@ -13,6 +12,19 @@
 ### 合并分支
 合并指定分支到当前分支`git merge <branch>`
 
+
+### 分支改名
+
+本地分支改名：`git branch -m <old_branch> <new_branch>`  
+远程分支改名本质上是先删除远程分支，再提交新分支。
+
+````dos
+#2 将远程分支的老分支删除
+git push origin :old_branch
+ 
+#3 将改名后的分支push到远程
+git push origin new_branch
+````
 
 ### 合并分支的模式
 合并分支有几种模式，“fast-forward合并”和”冲突合并”和“no-ff合并”
