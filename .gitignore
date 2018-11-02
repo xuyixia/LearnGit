@@ -1,0 +1,5 @@
+## 我用得是VS code，这个好像是VS的配置文件夹
+.DS_Store
+
+## gitbook构建的目录
+_book
