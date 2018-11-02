@@ -1,0 +1,582 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Git的结构组成 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="工作区/" />
+    
+    
+    <link rel="prev" href="../Git使用前的配置/支持中文编码/" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    前文简介
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1.1" data-path="../Git使用前的配置/">
+            
+                <a href="../Git使用前的配置/">
+            
+                    
+                    Git使用前的配置
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1.1.1" data-path="../Git使用前的配置/SSH key/">
+            
+                <a href="../Git使用前的配置/SSH key/">
+            
+                    
+                    SSH key
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.1.2" data-path="../Git使用前的配置/支持中文编码/">
+            
+                <a href="../Git使用前的配置/支持中文编码/">
+            
+                    
+                    支持中文编码
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.1.2" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    Git的结构组成
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1.2.1" data-path="工作区/">
+            
+                <a href="工作区/">
+            
+                    
+                    工作区
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.2.2" data-path="暂存区/">
+            
+                <a href="暂存区/">
+            
+                    
+                    暂存区
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.2.3" data-path="版本库/">
+            
+                <a href="版本库/">
+            
+                    
+                    版本库
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.3" data-path="../分支/">
+            
+                <a href="../分支/">
+            
+                    
+                    分支
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1.3.1" data-path="../分支/分支的基本操作/">
+            
+                <a href="../分支/分支的基本操作/">
+            
+                    
+                    分支的基本操作
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.3.2" data-path="../分支/分支策略/">
+            
+                <a href="../分支/分支策略/">
+            
+                    
+                    分支策略
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.3.3" data-path="../分支/切换分支/">
+            
+                <a href="../分支/切换分支/">
+            
+                    
+                    切换分支
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.3.4" data-path="../分支/合并/">
+            
+                <a href="../分支/合并/">
+            
+                    
+                    合并
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.3.5" data-path="../分支/基于分支的开发流程/">
+            
+                <a href="../分支/基于分支的开发流程/">
+            
+                    
+                    基于分支的开发流程
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1.3.5.1" data-path="../分支/基于分支的开发流程/GitFlow/">
+            
+                <a href="../分支/基于分支的开发流程/GitFlow/">
+            
+                    
+                    GitFlow
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.3.5.2" data-path="../分支/基于分支的开发流程/GitHub开发流程/README.md">
+            
+                <span>
+            
+                    
+                    GitHub开发流程
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.4" data-path="../远程库/">
+            
+                <a href="../远程库/">
+            
+                    
+                    远程库
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1.4.1" data-path="../远程库/远程库的基本操作/">
+            
+                <a href="../远程库/远程库的基本操作/">
+            
+                    
+                    远程库的基本操作
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.5" data-path="../Git个性化/">
+            
+                <a href="../Git个性化/">
+            
+                    
+                    Git个性化
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1.5.1" data-path="../Git个性化/gitignore/">
+            
+                <a href="../Git个性化/gitignore/">
+            
+                    
+                    gitignore
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.6" data-path="../Git衍生服务/README.md">
+            
+                <span>
+            
+                    
+                    Git衍生服务
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1.6.1" data-path="../Git衍生服务/GitHub/">
+            
+                <a href="../Git衍生服务/GitHub/">
+            
+                    
+                    GitHub
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.6.2" data-path="../Git衍生服务/GitBook/">
+            
+                <a href="../Git衍生服务/GitBook/">
+            
+                    
+                    GitBook
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.7" data-path="../疑问/">
+            
+                <a href="../疑问/">
+            
+                    
+                    疑问
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >Git的结构组成</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <p>&#x8FD9;&#x4E00;&#x90E8;&#x5206;&#x6982;&#x62EC;&#x4E86;Git&#x4ED3;&#x5E93;&#x7684;&#x7EC4;&#x6210;&#xFF1A;&#x5DE5;&#x4F5C;&#x533A;&#x3001;&#x6682;&#x5B58;&#x533A;&#x3001;&#x7248;&#x672C;&#x5E93;&#xFF0C;&#x4EE5;&#x6C42;&#x5BF9;Git&#x6709;&#x4E2A;&#x5927;&#x81F4;&#x7684;&#x5370;&#x8C61;&#x3002;</p>
+<p>&#x4ED3;&#x5E93;=&#x5DE5;&#x4F5C;&#x533A;+&#x6682;&#x5B58;&#x533A;+&#x7248;&#x672C;&#x5E93;=&#x8FDC;&#x7A0B;&#x5E93;</p>
+<p>&#x5728;Git&#x7684;&#x65E5;&#x5E38;&#x4F7F;&#x7528;&#x4E2D;&#xFF0C;&#x5C31;&#x4E00;&#x822C;&#x5F00;&#x53D1;&#x8005;&#x800C;&#x8A00;&#xFF0C;&#x5E94;&#x8BE5;&#x4E0D;&#x4F1A;&#x6709;&#x592A;&#x8FC7;&#x6DF1;&#x5165;&#x7684;&#x64CD;&#x4F5C;&#x3002;Git&#x7684;&#x6982;&#x5FF5;&#x867D;&#x7136;&#x5E9E;&#x5927;&#xFF0C;&#x4F46;&#x662F;&#x53EA;&#x9700;&#x8981;&#x5F04;&#x61C2;&#x5B83;&#x7684;&#x7EC4;&#x6210;&#x7ED3;&#x6784;&#xFF0C;&#x5C31;&#x80FD;&#x5E94;&#x4ED8;&#x65E5;&#x5E38;&#x5927;&#x90E8;&#x5206;&#x5DE5;&#x4F5C;&#x3002;</p>
+<p>Git&#x5728;&#x4F7F;&#x7528;&#x4E0A;&#x53EF;&#x5206;&#x4E3A;&#x4E24;&#x90E8;&#x5206;&#xFF0C;&#x4E00;&#x90E8;&#x5206;&#x662F;&#x672C;&#x5730;&#x7248;&#x672C;&#x5E93;&#xFF08;&#x6216;&#x79F0;&#x4E3A;&#x672C;&#x5730;&#x4ED3;&#x5E93;&#xFF09;&#xFF0C;&#x53E6;&#x4E00;&#x90E8;&#x5206;&#x5C31;&#x662F;&#x8FDC;&#x7A0B;&#x7248;&#x672C;&#x5E93;&#xFF08;&#x6216;Git&#x670D;&#x52A1;&#x5668;&#xFF09;&#x3002;</p>
+<p>&#x672C;&#x5730;&#x7248;&#x672C;&#x5E93;&#x7531;&#x5DE5;&#x4F5C;&#x533A;&#xFF0C;&#x6682;&#x5B58;&#x533A;&#x548C;&#x7248;&#x672C;&#x5E93;&#x7EC4;&#x6210;&#x3002;&#x5728;&#x7269;&#x7406;&#x7ED3;&#x6784;&#x4E0A;&#xFF0C;&#x5DE5;&#x4F5C;&#x533A;&#x5BF9;&#x5E94;&#x7684;&#x662F;&#x9879;&#x76EE;&#x6839;&#x6587;&#x4EF6;&#x5939;&#xFF1B;&#x6682;&#x5B58;&#x533A;&#x5BF9;&#x5E94;&#x7684;&#x662F;&quot;.git&quot;&#x6587;&#x4EF6;&#x5939;&#xFF1B;&#x7248;&#x672C;&#x5E93;&#x4E5F;&#x5BF9;&#x5E94;&#x7684;&#x662F;&#x201C;.git&#x201C;&#x6587;&#x4EF6;&#x5939;&#x3002;</p>
+<p>&#x8FDC;&#x7A0B;&#x7248;&#x672C;&#x5E93;&#x5728;&#x7269;&#x7406;&#x4E0A;&#x548C;&#x672C;&#x5730;&#x7248;&#x672C;&#x5E93;&#x6CA1;&#x4EC0;&#x4E48;&#x533A;&#x522B;&#x3002;&#x5BF9;&#x4E8E;&#x8FDC;&#x7A0B;&#x7248;&#x672C;&#x5E93;&#x548C;&#x672C;&#x5730;&#x7248;&#x672C;&#x5E93;&#x7684;&#x5173;&#x8054;&#x64CD;&#x4F5C;&#xFF0C;&#x53EF;&#x4EE5;&#x770B;&#x6210;&#x662F;&#x4E24;&#x4E2A;&#x4E0D;&#x540C;&#x5206;&#x652F;&#x95F4;&#x7684;&#x64CD;&#x4F5C;&#xFF0C;&#x4E8B;&#x5B9E;&#x4E0A;&#x4E5F;&#x771F;&#x53EA;&#x662F;&#x5206;&#x652F;&#x95F4;&#x7684;&#x64CD;&#x4F5C;&#x3002;</p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="../Git使用前的配置/支持中文编码/" class="navigation navigation-prev " aria-label="Previous page: 支持中文编码">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="工作区/" class="navigation navigation-next " aria-label="Next page: 工作区">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Git的结构组成","level":"1.1.2","depth":2,"next":{"title":"工作区","level":"1.1.2.1","depth":3,"path":"Git的结构组成/工作区/README.md","ref":"Git的结构组成/工作区/README.md","articles":[]},"previous":{"title":"支持中文编码","level":"1.1.1.2","depth":3,"path":"Git使用前的配置/支持中文编码/README.md","ref":"Git使用前的配置/支持中文编码/README.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"Git的结构组成/README.md","mtime":"2018-11-02T09:51:20.145Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-11-02T11:18:10.354Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
